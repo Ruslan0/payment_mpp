@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Apr 16 23:10:30 MSK 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015b-7863-5e5b-0000090984a8 
+on database directory memory:D:\RSN\JAVA\workspace\sinsay-payment\testdb with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/C:/Users/Ruslan/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_111-b14
+user.dir=D:\RSN\JAVA\workspace\sinsay-payment
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
