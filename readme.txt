@@ -1,0 +1,1 @@
+https://docs.spreedly.com/basics/purchase/
