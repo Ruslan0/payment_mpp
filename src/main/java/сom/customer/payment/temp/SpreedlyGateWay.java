@@ -1,4 +1,4 @@
-package com.sinsay.spreedly;
+package сom.customer.payment.temp;
 
 public class SpreedlyGateWay {
     public Gateway gateway;

@@ -1,12 +1,12 @@
-package com.sinsay;
+package сom.customer.payment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SinsayPaymentApplication {
+public class Starter {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SinsayPaymentApplication.class, args);
+		SpringApplication.run(Starter.class, args);
 	}
 }
