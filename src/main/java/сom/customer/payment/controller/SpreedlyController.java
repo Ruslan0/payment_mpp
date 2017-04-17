@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import сom.customer.payment.model.SpreedlyGateWay;
 import сom.customer.payment.service.SpreedlyService;
-import сom.customer.payment.temp.SpreedlyGateWay;
 
 @RestController
 public class SpreedlyController {

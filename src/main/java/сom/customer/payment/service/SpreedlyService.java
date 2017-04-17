@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import сom.customer.payment.temp.SpreedlyGateWay;
+import сom.customer.payment.model.SpreedlyGateWay;
 
 @Service
 public class SpreedlyService {

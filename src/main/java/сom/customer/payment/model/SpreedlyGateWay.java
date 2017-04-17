@@ -1,4 +1,4 @@
-package сom.customer.payment.temp;
+package сom.customer.payment.model;
 
 public class SpreedlyGateWay {
     public Gateway gateway;
