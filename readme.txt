@@ -1,5 +1,6 @@
 https://docs.spreedly.com/basics/purchase/
 https://docs.spreedly.com/reference/api/v1/#redact36
+https://blog.spreedly.com/2014/12/18/pci-dss-v3-0-for-online-merchants/      
 
 Autorization:
 Test
@@ -30,3 +31,6 @@ $ curl https://core.spreedly.com/v1/gateways.json \
           "gateway_type": "test"
         }
       }'
+      
+      
+      
