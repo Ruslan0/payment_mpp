@@ -1,0 +1,62 @@
+version: '2'
+services:
+  payment-gateway.api:
+    container_name: payment-gateway.api
+    build: .
+    ports:
+      - 8080:8080
+    expose:
+      - 8080
+    depends_on:
+      - payment-gateway.mysql
+      - payment-gateway.rabbitmq
+    volumes:
+      - ./src:/payment-gateway-api/src
+    environment:
+      - MAVEN_OPTS=-Xmx1G
+      - spring.datasource.username=root
+      - spring.datasource.password=root
+      - spring.datasource.url=jdbc:mysql://payment-gateway.mysql/payment-gateway?createDatabaseIfNotExist=true&useSSL=false
+      - spring.rabbitmq.host=payment-gateway.rabbitmq
+      - spring.rabbitmq.port=5672
+      - spring.rabbitmq.username=user
+      - spring.rabbitmq.password=password
+      - spring.cloud.consul.enabled=true
+      - spring.cloud.consul.host=payment-gateway.consul
+      - spring.cloud.consul.port=8500
+      - server.port=8080
+      - logging.level.root=warn
+      - logging.level.com.customer=info
+      - spring.cloud.consul.discovery.instance-id=payment-gateway-0.customer.api
+  payment-gateway.mysql:
+    container_name: payment-gateway.mysql
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sites
+    ports:
+      - 3307:3306
+    depends_on:
+      - payment-gateway.consul
+      - payment-gateway.rabbitmq
+    logging:
+      driver: "none"
+  payment-gateway.rabbitmq:
+    container_name: payment-gateway.rabbitmq
+    image: rabbitmq:management-alpine
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    depends_on:
+      - payment-gateway.consul
+    ports:
+      - 15672:15672
+      - 5672:5672
+    logging:
+      driver: "none"
+  payment-gateway.consul:
+    container_name: payment-gateway.consul
+    image: consul
+    ports:
+      - 8500:8500
+    command: "consul agent -server -bootstrap -node payment-gateway.consul -log-level=err -ui -client 0.0.0.0 -data-dir=/consul/data"
