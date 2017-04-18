@@ -15,4 +15,8 @@ public class SpreedlyClient {
     public String verify(final String transactionToken) {
         return spreedlyFeignClient.verify(transactionToken);
     }
+
+    public String purchase(final String transactionToken) {
+        return spreedlyFeignClient.purchase(transactionToken);
+    }
 }

@@ -1,17 +1,22 @@
 package com.customer.payment.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+public class GatewayRequest
+{
+    private String gateway_type;
 
-import java.io.Serializable;
+    public String getGateway_type ()
+    {
+        return gateway_type;
+    }
 
-@NoArgsConstructor
-@AllArgsConstructor
-public class GatewayRequest implements Serializable {
+    public void setGateway_type (String gateway_type)
+    {
+        this.gateway_type = gateway_type;
+    }
 
-    private static final long serialVersionUID = -1422960010381239807L;
-
-    @Getter
-    private Gateway gateway;
+    @Override
+    public String toString()
+    {
+        return "ClassPojo [gateway_type = "+gateway_type+"]";
+    }
 }
