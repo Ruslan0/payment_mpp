@@ -9,8 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class SpreedlyClientConfig {
     @Bean
     @ConditionalOnProperty(prefix = "customer.payment-api.spreedly", name = {"authorization-token", "api-url"})
-    public SpreedlyClient remoteEdgecastClient(final SpreedlyFeignClient spreedlyFeignClient,
-                                               final SpreedlyProperties spreedlyProperties) {
-        return new SpreedlyClient(spreedlyFeignClient, spreedlyProperties);
+    public SpreedlyClient remoteEdgecastClient(final SpreedlyFeignClient spreedlyFeignClient) {
+        return new SpreedlyClient(spreedlyFeignClient);
     }
 }
