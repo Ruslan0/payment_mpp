@@ -1,7 +1,7 @@
 target/
 *.log
 application-*.properties
-
+swagger.json
 ### STS ###
 .apt_generated
 .classpath
