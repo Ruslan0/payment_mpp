@@ -2,6 +2,7 @@ package com.customer.payment.controller;
 
 import com.customer.payment.service.PaymentService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +29,7 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
+    @ApiOperation(value = "Verifies a status of a transaction by the token provided", response = String.class)
     @RequestMapping(method = GET, value = "/verify/{transactionToken}",
             produces = {APPLICATION_JSON_VALUE, APPLICATION_JSON_UTF8_VALUE})
     public String verify(@PathVariable("transactionToken") final String transactionToken) {
