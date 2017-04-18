@@ -24,17 +24,17 @@ import static org.springframework.http.ResponseEntity.status;
 
 @Log4j
 public class ExceptionHandlingHelper {
-    public static final TimeZone UTC_TIMEZONE = TimeZone.getTimeZone("UTC");
+    private static final TimeZone UTC_TIMEZONE = TimeZone.getTimeZone("UTC");
 
-    public static final String MESSAGE_ATTRIBUTE = "message";
+    private static final String MESSAGE_ATTRIBUTE = "message";
 
-    public static final String STATUS_ATTRIBUTE = "status";
+    private static final String STATUS_ATTRIBUTE = "status";
 
-    public static final String TIMESTAMP_ATTRIBUTE = "timestamp";
+    private static final String TIMESTAMP_ATTRIBUTE = "timestamp";
 
-    public static final String ERROR_ATTRIBUTE = "error";
+    private static final String ERROR_ATTRIBUTE = "error";
 
-    public static final String EXCEPTION_ATTRIBUTE = "exception";
+    private static final String EXCEPTION_ATTRIBUTE = "exception";
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
