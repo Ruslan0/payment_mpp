@@ -2,6 +2,9 @@ package com.customer.payment.util;
 
 import lombok.experimental.UtilityClass;
 import lombok.extern.log4j.Log4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.restdocs.JUnitRestDocumentation;
 import org.springframework.restdocs.RestDocumentationContextProvider;
@@ -27,6 +30,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @UtilityClass
 public class TestUtils {
     private static final String ASCIIDOC_ROOT = "target/classes/asciidoc";
+	private static final Logger log = LoggerFactory.getLogger(TestUtils.class);
 
     public static JUnitRestDocumentation initRestDocuments() {
         return new JUnitRestDocumentation(join(EMPTY, ASCIIDOC_ROOT, prependIfMissing("api/payments", "/")));
