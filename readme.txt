@@ -90,6 +90,5 @@ $ curl https://core.spreedly.com/v1/gateways.json \
     "amount": 100,
     "currency_code": "USD"
   }
-  
-  https://core.spreedly.com/v1/C1dooNXSzHVTZ9bBDrw5B0EKqjf/purchase.json
 }
+https://core.spreedly.com/v1/C1dooNXSzHVTZ9bBDrw5B0EKqjf/purchase.json
